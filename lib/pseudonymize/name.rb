@@ -9,7 +9,7 @@ module Pseudonymize
     
     def result
       @name.split.map do |name|
-        "#{name[0].upcase}#{options[:censor] * (name.length - 1)}"
+        "#{name[0]}#{options[:censor] * (name.length - 1)}"
       end.join(' ')
     end
   end
