@@ -6,7 +6,7 @@ module Pseudonymize
   autoload :Telephone, 'pseudonymize/telephone'
   
   DEFAULT_OPTIONS = {
-    censor: '█'
+    censor: '•'
   }
   
   def self.pseudonymize(data, type:, **options)
