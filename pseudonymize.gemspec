@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'pseudonymize'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.date        = '2018-05-14'
   s.summary     = "A gem that pseudonymizes data."
   s.description = "A gem that pseudonymizes data."
