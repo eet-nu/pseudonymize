@@ -4,6 +4,7 @@ module Pseudonymize
   autoload :Email,     'pseudonymize/email'
   autoload :Name,      'pseudonymize/name'
   autoload :Telephone, 'pseudonymize/telephone'
+  autoload :Ip,        'pseudonymize/ip'
   
   DEFAULT_OPTIONS = {
     censor: '•'
@@ -19,6 +20,8 @@ module Pseudonymize
       Name.new(data, **options).result
     when :telephone
       Telephone.new(data, **options).result
+    when :ip
+      Ip.new(data, **options).result
     end
   end
 end
