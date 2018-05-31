@@ -28,5 +28,11 @@ describe Pseudonymize do
         pseudonymize('046-4007004', type: :telephone).must_equal '046•••••004'
       end
     end
+    
+    describe 'with an ip' do
+      it 'pseudonymizes the ip but preserves the first 3 octets' do
+        pseudonymize('1.2.3.4', type: :ip).must_equal '1.2.3.•••'
+      end
+    end
   end
 end
