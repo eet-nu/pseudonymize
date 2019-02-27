@@ -12,6 +12,7 @@ module Pseudonymize
   
   def self.pseudonymize(data, type:, **options)
     options = DEFAULT_OPTIONS.merge(options)
+    return data if (data.nil? || data.empty?)
     
     case type
     when :email

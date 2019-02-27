@@ -34,5 +34,35 @@ describe Pseudonymize do
         pseudonymize('1.2.3.4', type: :ip).must_equal '1.2.3.•••'
       end
     end
+    
+    describe 'with an empty email' do
+      it 'returns an empty string when an empty string is passed' do
+        pseudonymize('', type: :email).must_equal ''
+      end
+    end
+    
+    describe 'with an empty name' do
+      it 'returns an empty string when an empty string is passed' do
+        pseudonymize('', type: :name).must_equal ''
+      end
+    end
+    
+    describe 'with an empty phone number' do
+      it 'returns an empty string when an empty string is passed' do
+        pseudonymize('', type: :telephone).must_equal ''
+      end
+    end
+    
+    describe 'with an empty ip' do
+      it 'returns an empty string when an empty string is passed' do
+        pseudonymize('', type: :ip).must_equal ''
+      end
+    end
+    
+    describe 'with a nil object' do
+      it 'returns nil when a nil object is passed' do
+        assert_nil(pseudonymize(nil, type: :telephone))
+      end
+    end
   end
 end
